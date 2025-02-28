@@ -1,6 +1,6 @@
 class CuentaBancaria:
     __saldo = 0
-    def __init__(self,nombre):
+    def __init__(self,nombre="indefinido"):
         self.__nombre = nombre
     @property 
     def saldo(self):
@@ -12,14 +12,14 @@ class CuentaBancaria:
     def nombre(self):
         return self.__nombre
     
-    def depositar(self,deposito):
+    def depositar(self,deposito=0):
         if deposito <= 0:
             print('Error')
         else:
             self.saldo = self.saldo + deposito
         print('Deposito con exito')
     
-    def retirar(self,retiro):
+    def retirar(self,retiro=0):
         if retiro > 0:
             if retiro <= self.saldo:
                 self.saldo = self.saldo - retiro
